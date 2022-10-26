@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   arrSV: [],
   user: {},
-  svSearch:[]
 };
 
 const reactFormReducer = createSlice({
@@ -31,10 +30,9 @@ const reactFormReducer = createSlice({
       let searchSV = state.arrSV.filter((sv) => {
         return sv.name.trim().toLowerCase().includes(keyword);
       });
-      state.svSearch.push(searchSV)
-      console.log(state.svSearch)
-      // console.log("haha", searchSV);
-      // state.arrSV = searchSV;
+      
+      console.log("haha", searchSV);
+      state.arrSV = searchSV;
     },
     updateSV: (state, action) => {
       let svUpdate = state.arrSV.findIndex((sv) => sv.id === action.payload.id);
